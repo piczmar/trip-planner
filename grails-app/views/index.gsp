@@ -47,6 +47,11 @@
         #pageBody {
             margin-left:280px;
             margin-right:20px;
+            height: 500px;
+        }
+        #pageFooter{
+        	margin-bottom: 20px;
+        	margin-left: 280px;
         }
         </style>
     </head>
@@ -96,5 +101,10 @@
                 </ul>
             </div>
         </div>
+    	<div id="pageFooter" >
+	    	<div id="copyright">
+				&copy; 2002 - ${Calendar.getInstance().get(Calendar.YEAR)}, FakeCo Inc. All Rights Reserved.
+			</div>
+    	</div>
     </body>
 </html>

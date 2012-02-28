@@ -3,3 +3,6 @@ http://www.ibm.com/developerworks/views/java/libraryview.jsp?site_id=1&contentar
 
 http://www.ibm.com/developerworks/java/library/j-grails01158/
 http://www.ibm.com/developerworks/java/library/j-grails02128/
+http://www.ibm.com/developerworks/java/library/j-grails03118/
+
+http://www.ibm.com/developerworks/java/library/j-grails03118/index.html#resources
