@@ -26,4 +26,18 @@ class DateTagLibTests extends TagLibUnitTestCase {
 		String expected = Calendar.getInstance().get(Calendar.YEAR).toString()
 		assertEquals("the years don't match", expected, dateTagLib.currYear().toString())
 	}
+
+	void testCopyright(){
+		dateTagLib.copyright startYear: '2002', { 'FakeCo Inc.' }
+		assertEquals  "<div id='copyright'>&copy; 2002 - 2012, FakeCo Inc. All Rights Reserved.</div>", dateTagLib.out.toString()
+	}
+	void testHeadingWithNoLevelAndNoContent() {
+		dateTagLib.heading [:], {''}
+		assertEquals '<h1></h1>', dateTagLib.out.toString()
+	}
+
+	void testHeadingWithLevelAndSimpleContent() {
+		dateTagLib.heading level: '2', {'simple'}
+		assertEquals '<h2>simple</h2>', dateTagLib.out.toString()
+	}
 }

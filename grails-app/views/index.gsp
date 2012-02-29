@@ -101,10 +101,6 @@
                 </ul>
             </div>
         </div>
-    	<div id="pageFooter" >
-	    	<div id="copyright">
-				&copy; 2002 - <g:currYear />, FakeCo Inc. All Rights Reserved.
-			</div>
-    	</div>
+    	<g:render template="/footer" />
     </body>
 </html>
