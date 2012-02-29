@@ -103,7 +103,7 @@
         </div>
     	<div id="pageFooter" >
 	    	<div id="copyright">
-				&copy; 2002 - ${Calendar.getInstance().get(Calendar.YEAR)}, FakeCo Inc. All Rights Reserved.
+				&copy; 2002 - <g:currYear />, FakeCo Inc. All Rights Reserved.
 			</div>
     	</div>
     </body>
