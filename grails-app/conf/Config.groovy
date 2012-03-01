@@ -55,6 +55,7 @@ environments {
     }
     development {
         grails.serverURL = "http://localhost:8080/${appName}"
+		graphviz.dot.executable = "W:/tools/Graphviz 2.28/bin/dot.exe"
     }
     test {
         grails.serverURL = "http://localhost:8080/${appName}"

@@ -1,16 +1,19 @@
 package domain
 
-class Airline {
+class Airport {
 	static constraints = {
 		name()
 		iata(maxSize:3)
-		frequentFlier()
+		city()
+		state(maxSize:2)
+		country()
 	}
 
-	static hasMany = [flights:Flight]
 	String name
 	String iata
-	String frequentFlier
+	String city
+	String state
+	String country = "US"
 
 	String toString(){
 		"${iata} - ${name}"
