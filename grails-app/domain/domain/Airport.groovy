@@ -2,7 +2,7 @@ package domain
 
 class Airport {
 	static constraints = {
-		name()
+		name(nullable: false, blank: false)
 		iata(maxSize:3)
 		city()
 		state(maxSize:2)

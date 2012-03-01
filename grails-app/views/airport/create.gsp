@@ -27,16 +27,6 @@
                 <div class="dialog">
                     <table>
                         <tbody>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="name"><g:message code="airport.name.label" default="Name" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: airportInstance, field: 'name', 'errors')}">
-                                    <g:textField name="name" value="${airportInstance?.name}" />
-                                </td>
-                            </tr>
-                        
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="iata"><g:message code="airport.iata.label" default="Iata" /></label>
@@ -54,43 +44,6 @@
                                     <g:textField name="city" value="${airportInstance?.city}" />
                                 </td>
                             </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="state"><g:message code="airport.state.label" default="State" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: airportInstance, field: 'state', 'errors')}">
-                                    <g:textField name="state" maxlength="2" value="${airportInstance?.state}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="country"><g:message code="airport.country.label" default="Country" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: airportInstance, field: 'country', 'errors')}">
-                                    <g:textField name="country" value="${airportInstance?.country}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="lat"><g:message code="airport.lat.label" default="Lat" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: airportInstance, field: 'lat', 'errors')}">
-                                    <g:textField name="lat" value="${airportInstance?.lat}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="lng"><g:message code="airport.lng.label" default="Lng" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: airportInstance, field: 'lng', 'errors')}">
-                                    <g:textField name="lng" value="${airportInstance?.lng}" />
-                                </td>
-                            </tr>
-                        
                         </tbody>
                     </table>
                 </div>
@@ -98,6 +51,8 @@
                     <span class="button"><g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>
                 </div>
             </g:form>
+    		<p><a href="http://www.world-airport-codes.com/alphabetical/country-name/p.html">List of available IATA codes</a></p>
         </div>
     </body>
+    
 </html>
