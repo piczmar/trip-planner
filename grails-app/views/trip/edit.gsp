@@ -33,33 +33,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="airline"><g:message code="trip.airline.label" default="Airline" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: tripInstance, field: 'airline', 'errors')}">
-                                    <g:select name="airline.id" from="${domain.Airline.list()}" optionKey="id" value="${tripInstance?.airline?.id}"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="city"><g:message code="trip.city.label" default="City" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: tripInstance, field: 'city', 'errors')}">
-                                    <g:textField name="city" value="${tripInstance?.city}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="endDate"><g:message code="trip.endDate.label" default="End Date" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: tripInstance, field: 'endDate', 'errors')}">
-                                    <g:datePicker name="endDate" precision="day" value="${tripInstance?.endDate}"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                   <label for="name"><g:message code="trip.name.label" default="Name" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: tripInstance, field: 'name', 'errors')}">
@@ -69,28 +42,17 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="notes"><g:message code="trip.notes.label" default="Notes" /></label>
+                                  <label for="flights"><g:message code="trip.flights.label" default="Flights" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: tripInstance, field: 'notes', 'errors')}">
-                                    <g:textField name="notes" value="${tripInstance?.notes}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="purpose"><g:message code="trip.purpose.label" default="Purpose" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: tripInstance, field: 'purpose', 'errors')}">
-                                    <g:textField name="purpose" value="${tripInstance?.purpose}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="startDate"><g:message code="trip.startDate.label" default="Start Date" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: tripInstance, field: 'startDate', 'errors')}">
-                                    <g:datePicker name="startDate" precision="day" value="${tripInstance?.startDate}"  />
+                                <td valign="top" class="value ${hasErrors(bean: tripInstance, field: 'flights', 'errors')}">
+                                    
+<ul>
+<g:each in="${tripInstance?.flights?}" var="f">
+    <li><g:link controller="flight" action="show" id="${f.id}">${f?.encodeAsHTML()}</g:link></li>
+</g:each>
+</ul>
+<g:link controller="flight" action="create" params="['trip.id': tripInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'flight.label', default: 'Flight')])}</g:link>
+
                                 </td>
                             </tr>
                         

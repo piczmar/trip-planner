@@ -30,27 +30,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="trip.airline.label" default="Airline" /></td>
-                            
-                            <td valign="top" class="value"><g:link controller="airline" action="show" id="${tripInstance?.airline?.id}">${tripInstance?.airline?.encodeAsHTML()}</g:link></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="trip.city.label" default="City" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: tripInstance, field: "city")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="trip.endDate.label" default="End Date" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${tripInstance?.endDate}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="trip.name.label" default="Name" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: tripInstance, field: "name")}</td>
@@ -58,23 +37,15 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="trip.notes.label" default="Notes" /></td>
+                            <td valign="top" class="name"><g:message code="trip.flights.label" default="Flights" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: tripInstance, field: "notes")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="trip.purpose.label" default="Purpose" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: tripInstance, field: "purpose")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="trip.startDate.label" default="Start Date" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${tripInstance?.startDate}" /></td>
+                            <td valign="top" style="text-align: left;" class="value">
+                                <ul>
+                                <g:each in="${tripInstance.flights}" var="f">
+                                    <li><g:link controller="flight" action="show" id="${f.id}">${f?.encodeAsHTML()}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
                             
                         </tr>
                     

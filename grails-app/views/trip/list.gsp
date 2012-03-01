@@ -24,15 +24,7 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'trip.id.label', default: 'Id')}" />
                         
-                            <th><g:message code="trip.airline.label" default="Airline" /></th>
-                        
-                            <g:sortableColumn property="city" title="${message(code: 'trip.city.label', default: 'City')}" />
-                        
-                            <g:sortableColumn property="endDate" title="${message(code: 'trip.endDate.label', default: 'End Date')}" />
-                        
                             <g:sortableColumn property="name" title="${message(code: 'trip.name.label', default: 'Name')}" />
-                        
-                            <g:sortableColumn property="notes" title="${message(code: 'trip.notes.label', default: 'Notes')}" />
                         
                         </tr>
                     </thead>
@@ -42,15 +34,7 @@
                         
                             <td><g:link action="show" id="${tripInstance.id}">${fieldValue(bean: tripInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: tripInstance, field: "airline")}</td>
-                        
-                            <td>${fieldValue(bean: tripInstance, field: "city")}</td>
-                        
-                            <td><g:formatDate date="${tripInstance.endDate}" /></td>
-                        
                             <td>${fieldValue(bean: tripInstance, field: "name")}</td>
-                        
-                            <td>${fieldValue(bean: tripInstance, field: "notes")}</td>
                         
                         </tr>
                     </g:each>
@@ -60,6 +44,7 @@
             <div class="paginateButtons">
                 <g:paginate total="${tripInstanceTotal}" />
             </div>
+            <g:render template="/footer" />
         </div>
     </body>
 </html>
