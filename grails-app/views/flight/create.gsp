@@ -87,7 +87,7 @@
                                     <label for="trip"><g:message code="flight.trip.label" default="Trip" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: flightInstance, field: 'trip', 'errors')}">
-                                    <g:select name="trip.id" from="${domain.Trip.list()}" optionKey="id" value="${flightInstance?.trip?.id}"  />
+                                    <g:select name="trip.id" from="${domain.Trip.listOrderByName()}" optionKey="id" value="${flightInstance?.trip?.id}"  />
                                 </td>
                             </tr>
                         
