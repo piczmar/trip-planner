@@ -99,6 +99,10 @@
                         <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
                     </g:each>
                 </ul>
+                 <h2>Map of Airports</h2>
+                <ul>
+                    <g:link controller="airport" action="map">map</g:link>
+                </ul>
             </div>
         </div>
     	<g:render template="/footer" />

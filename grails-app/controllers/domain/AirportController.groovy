@@ -65,4 +65,9 @@ class AirportController {
             redirect(action: "list")
         }
     }  
+	
+	
+	def map = {
+		[airportList: Airport.list()]
+	}
 }
