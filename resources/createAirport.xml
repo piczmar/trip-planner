@@ -1,0 +1,8 @@
+
+<airport iata="oma">
+	<official-name>Eppley Airfield</official-name>
+	<city>Omaha</city>
+	<state>NE</state>
+	<country>US</country>
+	<location latitude="41.3019419" longitude="-95.8939015" />
+</airport>
