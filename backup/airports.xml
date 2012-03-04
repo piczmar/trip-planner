@@ -1,0 +1,72 @@
+<airports>
+	<airport id='1'>
+		<version>2</version>
+		<name>Denver International Airport</name>
+		<city>Denver</city>
+		<state>CO</state>
+		<country>US</country>
+		<iata>den</iata>
+		<lat>39.8583188</lat>
+		<lng>-104.6674674</lng>
+	</airport>
+	<airport id='2'>
+		<version>0</version>
+		<name>San Jose International Airport</name>
+		<city>San Jose</city>
+		<state>CA</state>
+		<country>US</country>
+		<iata>sjc</iata>
+		<lat>37.3618854</lat>
+		<lng>-121.9288459</lng>
+	</airport>
+	<airport id='3'>
+		<version>0</version>
+		<name>Seattle-Tacoma International Airport</name>
+		<city>Seattle</city>
+		<state>WA</state>
+		<country>US</country>
+		<iata>sea</iata>
+		<lat>47.4489882</lat>
+		<lng>-122.3092904</lng>
+	</airport>
+	<airport id='4'>
+		<version>0</version>
+		<name>Raleigh-Durham Airport</name>
+		<city>Raleigh</city>
+		<state>NC</state>
+		<country>US</country>
+		<iata>rdu</iata>
+		<lat>35.8720933</lat>
+		<lng>-78.7850058</lng>
+	</airport>
+	<airport id='5'>
+		<version>0</version>
+		<name>Chicago O'Hare International Airport</name>
+		<city>Chicago</city>
+		<state>IL</state>
+		<country>US</country>
+		<iata>ord</iata>
+		<lat>41.9794742</lat>
+		<lng>-87.9042318</lng>
+	</airport>
+	<airport id='6'>
+		<version>0</version>
+		<name>Washington Dulles International Airport</name>
+		<city>Washington DC</city>
+		<state>VA</state>
+		<country>US</country>
+		<iata>iad</iata>
+		<lat>38.9445551</lat>
+		<lng>-77.4552668</lng>
+	</airport>
+	<airport id='7'>
+		<version>0</version>
+		<name>La Guardia Airport</name>
+		<city>New York</city>
+		<state>NY</state>
+		<country>US</country>
+		<iata>lga</iata>
+		<lat>40.7773237</lat>
+		<lng>-73.8751358</lng>
+	</airport>
+</airports>

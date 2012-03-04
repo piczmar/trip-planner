@@ -29,4 +29,13 @@ environments {
             url = "jdbc:hsqldb:file:prodDb;shutdown=true"
         }
     }
+//	production{
+//		dataSource {
+//			dbCreate = "create"
+//			url = "jdbc:postgresql://localhost:5432/grails"
+//			driverClassName = "org.postgresql.Driver"
+//			username = "postgres"
+//			password = "secret_1"
+//		}
+//	}
 }

@@ -6,5 +6,7 @@ http://www.ibm.com/developerworks/java/library/j-grails02128/
 http://www.ibm.com/developerworks/java/library/j-grails03118/
 http://www.ibm.com/developerworks/java/library/j-grails04158/
 http://www.ibm.com/developerworks/java/library/j-grails05208/
+http://www.ibm.com/developerworks/java/library/j-grails06178/ ** to be done later
+http://www.ibm.com/developerworks/java/library/j-grails07158/
 
 http://www.ibm.com/developerworks/java/library/j-grails03118/index.html#resources
