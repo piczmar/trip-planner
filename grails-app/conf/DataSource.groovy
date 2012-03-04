@@ -1,4 +1,7 @@
+// this import is supposed to be added to data source but it works without it in grails 1.3
+//import org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsAnnotationConfiguration
 dataSource {
+	//configClass = GrailsAnnotationConfiguration.class
     pooled = true
     driverClassName = "org.hsqldb.jdbcDriver"
     username = "sa"
