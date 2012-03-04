@@ -12,6 +12,37 @@ class AirportController {
 	def getXML = {
 		render Airport.findByIata(params.iata) as XML
 	}
+	def xmlList= {
+		render Airport.list() as XML
+	}
+	// Create custom XML in form:
+	//<airports>
+	//	<airport id="1" iata="den">
+	//	<official-name>Denver International Airport</official-name>
+	//	<city>Denver</city>
+	//	...
+	//	</airport>
+	//...
+	//</airports>
+	def customXmlList = {
+		def list = Airport.list()
+		render(contentType:"text/xml"){
+			airports{
+				for(a in list){
+					airport(id:a.id, iata:a.iata){
+						"official-name"(a.name)
+						city(a.city)
+						state(a.state)
+						country(a.country)
+						location(latitude:a.lat, longitude:a.lng)
+					}
+				}
+			}
+		}
+	}
+	def xmlShow = {
+		render Airport.findById(params.id) as XML
+	}
 	def getJson = {
 		def airports = Airport.findByIata(params.iata)
 		if(!airports){
