@@ -8,7 +8,9 @@ public class AirportHbm {
 	private String state;
 	private String lat;
 	private String lng;
-
+	private String feature;
+	private String county;
+	
 	public long getId() {
 		return id;
 	}
@@ -55,6 +57,22 @@ public class AirportHbm {
 
 	public void setLng(String lng) {
 		this.lng = lng;
+	}
+
+	public String getFeature() {
+		return feature;
+	}
+
+	public void setFeature(String feature) {
+		this.feature = feature;
+	}
+
+	public String getCounty() {
+		return county;
+	}
+
+	public void setCounty(String county) {
+		this.county = county;
 	}
 
 }

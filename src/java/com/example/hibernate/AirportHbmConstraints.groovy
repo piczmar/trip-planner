@@ -2,7 +2,7 @@ package com.example.hibernate
 
 constraints = {
 	name()
-	iata(maxSize:3)
+	iata(maxSize:4)
 	state(maxSize:2)
 	lat()
 	lng()

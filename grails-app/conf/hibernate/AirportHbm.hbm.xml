@@ -15,5 +15,7 @@
 		<property name="state" />
 		<property name="lat" column="latitude" />
 		<property name="lng" column="longitude" />
+		<property name="feature" />
+		<property name="county" />
 	</class>
 </hibernate-mapping>
