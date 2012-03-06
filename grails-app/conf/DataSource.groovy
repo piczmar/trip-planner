@@ -21,10 +21,17 @@ environments {
         }
     }
     test {
-        dataSource {
-            dbCreate = "update"
-            url = "jdbc:hsqldb:mem:testDb"
-        }
+//        dataSource {
+//            dbCreate = "update"
+//            url = "jdbc:hsqldb:mem:testDb"
+//        }
+		dataSource {
+			//dbCreate = "create"
+			url = "jdbc:postgresql://localhost:5432/grails"
+			driverClassName = "org.postgresql.Driver"
+			username = "postgres"
+			password = "secret_1"
+		}
     }
 //    production {
 //        dataSource {
@@ -34,7 +41,7 @@ environments {
 //    }
 	production{
 		dataSource {
-			dbCreate = "create"
+			//dbCreate = "create"
 			url = "jdbc:postgresql://localhost:5432/grails"
 			driverClassName = "org.postgresql.Driver"
 			username = "postgres"
