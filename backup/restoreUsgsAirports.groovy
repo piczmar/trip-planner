@@ -1,12 +1,17 @@
 if(args.size()){
 	f = new File(args[0])
 	println f
-
+	// for PostgreSLQ
 	sql = groovy.sql.Sql.newInstance(
-			"jdbc:mysql://localhost/trip?autoReconnect=true",
-			"grails",
-			"server",
-			"com.mysql.jdbc.Driver")
+			"jdbc:postgresql://localhost:5432/grails",
+			"postgres",
+			"secret_1",
+			"org.postgresql.Driver")
+//	sql = groovy.sql.Sql.newInstance(
+//			"jdbc:mysql://localhost/trip?autoReconnect=true",
+//			"grails",
+//			"server",
+//			"com.mysql.jdbc.Driver")
 
 	FeatureCollection = new groovy.util.XmlParser().parse(f)
 	ogr = new groovy.xml.Namespace("http://ogr.maptools.org/")
@@ -19,7 +24,7 @@ if(args.size()){
 		sql.execute(
 				"insert into usgs_airports (airport_id, locid, feature, airport_name, state, county, latitude, longitude) values(?,?,?,?,?,?,?,?)",
 				[
-					airprtx020[ogr.AIRPRTX020].text(),
+					airprtx020[ogr.AIRPRTX020].text() as Integer,
 					airprtx020[ogr.LOCID].text(),
 					airprtx020[ogr.FEATURE].text(),
 					airprtx020[ogr.NAME].text(),
