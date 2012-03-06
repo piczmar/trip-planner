@@ -14,6 +14,8 @@ class AirportMappingControllerTests extends ControllerUnitTestCase {
 	}
 	void testWithBadIata(){
 		def controller = new AirportMappingController()
+		// use Groovy metaprogramming to override the getParams method directly, 
+		// forcing the expected values to be present in the HashMap that's returned
 		controller.metaClass.getParams = {
 			->
 			return ["id":"foo"]
