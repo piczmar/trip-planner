@@ -40,9 +40,9 @@
                         
                             <td>${fieldValue(bean: hotelStayInstance, field: "hotel")}</td>
                         
-                            <td><g:formatDate date="${hotelStayInstance.checkIn}" /></td>
+                            <td><trip:customDateFormat format="dd-MM-yyyy">${hotelStayInstance.checkIn}</trip:customDateFormat></td>
                         
-                            <td><g:formatDate date="${hotelStayInstance.checkOut}" /></td>
+                            <td><trip:customDateFormat format="dd-MM-yyyy">${hotelStayInstance.checkOut}</trip:customDateFormat></td>
                         
                         </tr>
                     </g:each>

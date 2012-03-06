@@ -40,4 +40,18 @@ class HotelStayTests extends GrailsUnitTestCase {
 		println code ?: "the blank hotel code wasn't found"
 		assertNotNull "the blank hotel field should be the culprit", code
 	}
+
+	void testCheckOutIsNotBeforeCheckIn(){
+		mockForConstraintsTests(HotelStay)
+		def h = new HotelStay(hotel:"Radisson")
+		def df = new SimpleDateFormat("MM/dd/yyyy")
+		h.checkIn = df.parse("10/15/2008")
+		h.checkOut = df.parse("10/10/2008")
+
+		assertFalse "there should be errors", h.validate()
+		def badField = h.errors.getFieldError('checkOut')
+		assertNotNull "I'm expecting to find an error on the checkOut field", badField
+		def code = badField?.codes.find {it == 'hotelStay.checkOut.validator.invalid'}
+		assertNotNull "the checkOut field should be the culprit", code
+	}
 }
