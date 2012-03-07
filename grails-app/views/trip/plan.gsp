@@ -51,7 +51,8 @@ body {
            airportMarkers[position].setMap(map);         
         }
         document.getElementById("airport_" + position).innerHTML = airport.name
-        drawLine()
+        drawLine();
+        showHotelsLink();
       }
       function drawLine(){
         if(line != null){
@@ -67,7 +68,44 @@ body {
         	});
           line.setMap(map);
         }
+      }   
+      
+      function showHotelsLink(){
+    	  if(airportMarkers[1] != null){
+    	    var hotels_link = document.getElementById("hotels_link")
+    	    hotels_link.innerHTML = "<a href='#' onClick='loadHotels()'>Show Nearby Hotels...</a>"
+    	  }
+    	}
+    	      
+      function loadHotels(){
+    	  var url = "${createLink(controller:'hotelStay', action:'near')}"
+    	  
+    	  new Ajax.Request(url,{
+    	    onSuccess: function(res) { showHotels(res) },
+    	    onFailure: function(res) { displayError(res) }
+    	  })
       }    
+
+      function displayError(response){
+        var html = "response.status=" + response.status + "<br />"
+        html += "response.responseText=" + response.responseText + "<br />"
+        var hotels = document.getElementById("hotels_panel")
+        hotels.innerHTML = html
+      }
+      function showHotels(response){
+    	  var results = eval( '(' + response.responseText + ')')
+    	  var resultCount = 1 * results.ResultSet.totalResultsReturned
+    	  var html = "<ul>"
+    	  for(var i=0; i < resultCount; i++){
+    	    html += "<li>" + results.ResultSet.Result[i].Title + "<br />"
+    	    html += "Distance: " + results.ResultSet.Result[i].Distance + " m <br />"
+    	    html += "<hr />"
+    	    html += "</li>"
+    	  }
+    	  html += "</ul>"
+    	  var hotels = document.getElementById("hotels_panel")
+    	  hotels.innerHTML = html
+     }
 </script>
 </head>
 <body onload="initialize()">
@@ -89,6 +127,8 @@ body {
 			<input type="submit" value="Search" />
 		</g:formRemote>
 		<div id="airport_1"></div>
+		<div id="hotels_link"></div>
+		<div id="hotels_panel"></div>
 	</div>
 	<div id="map_canvas" style="width: 75%; height: 100%; float: right"></div>
 </body>
