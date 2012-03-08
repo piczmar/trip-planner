@@ -11,5 +11,6 @@ http://www.ibm.com/developerworks/java/library/j-grails07158/
 http://www.ibm.com/developerworks/java/library/j-grails09168/
 http://www.ibm.com/developerworks/java/library/j-grails10148/
 http://www.ibm.com/developerworks/java/library/j-grails11188/
+http://www.ibm.com/developerworks/java/library/j-grails12168/
 
 http://www.ibm.com/developerworks/java/library/j-grails03118/index.html#resources
