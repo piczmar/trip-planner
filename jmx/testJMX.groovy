@@ -14,3 +14,10 @@ server.domains.each{println it}
 
 println "\nRegistered MBeans:"
 server.queryNames(null, null).each{println it}
+
+println "\nHere is the Runtime MBean:"
+def mbean = new GroovyMBean(server, "java.lang:type=Runtime")
+println mbean
+
+println "\nHere are the InputArguments:"
+mbean.InputArguments.each{println it}
